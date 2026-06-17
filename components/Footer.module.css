@@ -1,0 +1,291 @@
+.footer {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  margin-top: 4rem;
+}
+
+.top {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.2fr 1fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── Columnas ── */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.columnTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+}
+
+.spaced {
+  margin-top: 1.5rem;
+}
+
+/* ── Links ── */
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLink {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+}
+
+/* ── Contacto ── */
+.phone {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.contactText {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+}
+
+/* ── Horarios ── */
+.horarioList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.horarioList li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.horarioLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+}
+
+.horarioVal {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* ── Garantía acordeón ── */
+.accordionToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.accordionToggle:hover {
+  color: #ffffff;
+}
+
+.chevron {
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordionOpen {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.garantiaText {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  white-space: pre-line;
+  padding: 0.75rem 0;
+}
+
+/* ── Formularios ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+}
+
+.input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.inputBtn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+  padding: 0.6rem 0.9rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.inputBtn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.8rem;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  resize: none;
+}
+
+.textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.formBtn {
+  background: #ffffff;
+  color: var(--color-accent);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  transition: opacity 0.2s ease;
+}
+
+.formBtn:hover {
+  opacity: 0.85;
+}
+
+.success {
+  font-size: 0.78rem;
+  color: #9ae6b4;
+}
+
+/* ── Bottom ── */
+.bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottom p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.03em;
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.socials a {
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s ease;
+}
+
+.socials a:hover {
+  color: #ffffff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .top {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+}

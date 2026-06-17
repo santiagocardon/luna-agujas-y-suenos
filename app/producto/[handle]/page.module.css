@@ -1,0 +1,220 @@
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── Galería ── */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 110px;
+}
+
+.mainImage {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  position: relative;
+  width: 72px;
+  height: 90px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: var(--color-surface);
+  transition: border-color var(--transition);
+}
+
+.thumbActive {
+  border-color: var(--color-accent);
+}
+
+.thumbImage {
+  object-fit: cover;
+}
+
+/* ── Info ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── Variantes ── */
+.optionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.optionLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.optionValues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.optionBtn {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.optionBtn:hover {
+  border-color: var(--color-accent);
+}
+
+.optionBtnActive {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* ── A la medida ── */
+.medidaBox {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.medidaTitle {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--color-accent);
+}
+
+.medidaSubtitle {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.medidaInput {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  resize: none;
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.medidaInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* ── Botón ── */
+.addBtn {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 100%;
+  transition: opacity var(--transition);
+}
+
+.addBtn:hover {
+  opacity: 0.85;
+}
+
+.addBtnDisabled {
+  background-color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ── Descripción ── */
+.description {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.descTitle {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.descText {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .gallery {
+    position: static;
+  }
+
+  .main {
+    padding: 2rem 1rem 4rem;
+  }
+}
