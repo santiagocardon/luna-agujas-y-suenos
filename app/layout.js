@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" style={{ colorScheme: 'light' }}>
       <head>
         <link href="https://fonts.cdnfonts.com/css/safira-march" rel="stylesheet" />
       </head>

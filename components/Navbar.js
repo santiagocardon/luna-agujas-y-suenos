@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Navbar.module.css'
 import { useCart } from '@/context/CartContext'
+import SearchDrawer from './SearchDrawer'
+
 
 
 const menu = [
@@ -30,11 +32,11 @@ const menu = [
 const menuBottom = [
   { label: 'Sugerencias', slug: 'sugerencias' },
   { label: 'Garantías', slug: 'garantias' },
-  { label: 'Rastreo de tu pedido', slug: 'rastreo' },
+  { label: 'Rastrea tu pedido', slug: 'rastreo' },
 ]
 
 const topMessages = [
-  '🌙 Envío gratis en compras superiores a $200.000',
+  '🌙 Envío gratis en compras superiores a $250.000',
   'Prendas adaptadas con amor y dedicación',
   'Asesoría personalizada por WhatsApp',
 ]
@@ -44,6 +46,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openSection, setOpenSection] = useState(null)
   const { cartCount, setCartOpen } = useCart()
+  const [searchOpen, setSearchOpen] = useState(false)
 
   return (
     <>
@@ -115,11 +118,12 @@ export default function Navbar() {
 
           {/* Iconos derecha */}
           <div className={styles.navActions}>
-            <Link href="/buscar" aria-label="Buscar">
+            <button onClick={() => setSearchOpen(true)} aria-label="Buscar" className={styles.cartBtn}>
               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
               </svg>
-            </Link>
+            </button>
+
             <button onClick={() => setCartOpen(true)} aria-label="Carrito" className={styles.cartBtn}>
               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
@@ -178,6 +182,7 @@ export default function Navbar() {
     </Link>
   ))}
 </div>
+  <SearchDrawer open={searchOpen} onClose={() => setSearchOpen(false)} />
       </nav>
       </div>
     </>

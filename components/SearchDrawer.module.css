@@ -1,0 +1,156 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlayVisible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 201;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.drawerOpen {
+  transform: translateY(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.inputWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-muted);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-muted);
+}
+
+.close {
+  font-size: 1rem;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.close:hover {
+  color: var(--color-text);
+}
+
+.results {
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.status {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  transition: background var(--transition);
+}
+
+.resultItem:hover {
+  background: var(--color-surface);
+}
+
+.resultImage {
+  position: relative;
+  width: 60px;
+  height: 75px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.resultPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-surface);
+}
+
+.resultInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.resultTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.resultPrice {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 1.25rem 1.25rem;
+  }
+  .results {
+    padding: 1rem 1.25rem;
+  }
+}

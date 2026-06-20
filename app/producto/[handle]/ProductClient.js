@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
 import styles from './page.module.css'
+import Reviews from '@/components/Reviews'
 
 export default function ProductClient({ product }) {
   const { addToCart, loading } = useCart()
@@ -125,6 +126,7 @@ export default function ProductClient({ product }) {
           )}
         </div>
       </div>
+      <Reviews reviewsData={product.reviews} />
     </main>
   )
 }

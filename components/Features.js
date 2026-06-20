@@ -5,7 +5,7 @@ import { useReveal } from '@/hooks/useReveal'
 const features = [
   {
     label: 'Envío gratis',
-    desc: 'en compras superiores a $200.000',
+    desc: 'en compras superiores a $250.000',
     icon: (
       <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/>

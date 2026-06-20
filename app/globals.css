@@ -4,7 +4,7 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
-  --color-accent: #030814;
+  --color-accent: #1C2A44;
   --color-accent-light: #0a1628;
   --color-muted: #6b7280;
   --color-border: #e5e7eb;
@@ -20,6 +20,8 @@
 
   --max-width: 1280px;
   --padding-page: 0 2rem;
+
+  color-scheme: light only;
 }
 
 /* ── Reset ── */
@@ -43,10 +45,6 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
-
-/* html, body {
-  overflow-x: hidden;
-} */
 
 
 /* ── Tipografía ── */
