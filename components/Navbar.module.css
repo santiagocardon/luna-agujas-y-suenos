@@ -1,8 +1,8 @@
 
 /* ── Top bar marquee ── */
 .topBar {
-  background-color: var(--color-accent);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: var(--color-accent);
   overflow: hidden;
   padding: 0.5rem 0;
   white-space: nowrap;
@@ -18,13 +18,14 @@
 .marqueeItem {
   font-size: 0.85rem;
   letter-spacing: 0.04em;
-  color: #ffffff;
+  color: var(--color-accent);
   padding: 0 2rem;
 }
 
 .separator {
   margin: 0 1rem;
-  opacity: 0.5;
+  opacity: 0.4;
+  color: var(--color-accent);
 }
 
 @keyframes marquee {
@@ -40,36 +41,42 @@
 
 /* ── Navbar ── */
 .navbar {
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-accent);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .navInner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-.logo { display: flex; align-items: center; }
+.logo { 
+  display: flex; 
+  align-items: center;
+  flex-shrink: 0;
+}
 
 .logoName {
   font-family: var(--font-title);
-  font-size: 2.5rem;
-  color: var(--color-accent);
-  letter-spacing: 0.05em;
-  margin-left: 1rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 /* ── Links desktop ── */
 .navLinks {
   display: flex;
   list-style: none;
-  gap: 1.75rem;
+  gap: 1.25rem;
   align-items: center;
 }
 
@@ -85,19 +92,19 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   letter-spacing: 0.03em;
-  color: var(--color-text);
+  color: #ffffff;
   transition: color var(--transition);
   padding: 0.5rem 0;
 }
 
-.navLink:hover { color: var(--color-accent); }
+.navLink:hover { color: rgba(255,255,255,0.7); }
 
 .navLinkSecondary {
   font-size: 0.85rem;
-  color: var(--color-muted);
+  color: rgba(255,255,255,0.6);
 }
 
-.navLinkSecondary:hover { color: var(--color-accent); }
+.navLinkSecondary:hover { color: #ffffff; }
 
 /* ── Dropdown ── */
 .dropdown {
@@ -146,11 +153,11 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  color: var(--color-text);
+  color: #ffffff;
 }
 
 .navActions a { transition: color var(--transition); }
-.navActions a:hover { color: var(--color-accent); }
+.navActions a:hover { color: rgba(255,255,255,0.7); }
 
 /* ── Burger ── */
 .burger {
@@ -158,13 +165,14 @@
   flex-direction: column;
   gap: 5px;
   padding: 4px;
+  margin-left: 0.1rem;
 }
 
 .burger span {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--color-text);
+  background-color: #ffffff;
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -236,8 +244,15 @@
     gap: 1rem;
     margin-left: auto;
   }
-  .burger {
-    margin-left: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .logoName {
+    font-size: 0.95rem;
+  }
+  .logo img {
+    width: 35px !important;
+    height: 35px !important;
   }
 }
 
@@ -281,11 +296,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  color: var(--color-text);
+  color: #ffffff;
   transition: color var(--transition);
 }
 
-.cartBtn:hover { color: var(--color-accent); }
+.cartBtn:hover { color: rgba(255,255,255,0.7); }
 
 .cartCount {
   position: absolute;
@@ -300,4 +315,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background-color: rgba(255,255,255,0.2);
 }

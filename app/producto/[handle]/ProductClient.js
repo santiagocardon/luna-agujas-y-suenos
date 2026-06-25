@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
 import styles from './page.module.css'
@@ -11,6 +11,7 @@ export default function ProductClient({ product }) {
   const images = product.images.edges.map(({ node }) => node)
   const variants = product.variants.edges.map(({ node }) => node)
   const options = product.options
+  const touchStartX = useRef(null)
 
   const [mainImage, setMainImage] = useState(0)
   const [selectedOptions, setSelectedOptions] = useState(() => {
@@ -38,36 +39,67 @@ export default function ProductClient({ product }) {
     setTimeout(() => setAdded(false), 2500)
   }
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) setMainImage((prev) => (prev + 1) % images.length)
+      else setMainImage((prev) => (prev - 1 + images.length) % images.length)
+    }
+    touchStartX.current = null
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.layout}>
 
         {/* Galería */}
         <div className={styles.gallery}>
-          <div className={styles.mainImage}>
-            {images[mainImage] && (
-              <Image
-                src={images[mainImage].url}
-                alt={images[mainImage].altText || product.title}
-                fill
-                className={styles.image}
-                priority
-              />
-            )}
-          </div>
-          {images.length > 1 && (
-            <div className={styles.thumbnails}>
-              {images.map((img, i) => (
-                <button
-                  key={i}
-                  className={`${styles.thumb} ${i === mainImage ? styles.thumbActive : ''}`}
-                  onClick={() => setMainImage(i)}
-                >
-                  <Image src={img.url} alt={img.altText || ''} fill className={styles.thumbImage} />
-                </button>
-              ))}
-            </div>
-          )}
+          <div
+  className={styles.mainImage}
+  onTouchStart={handleTouchStart}
+  onTouchEnd={handleTouchEnd}
+>
+  {images[mainImage] && (
+    <Image
+      src={images[mainImage].url}
+      alt={images[mainImage].altText || product.title}
+      fill
+      className={styles.image}
+      priority
+    />
+  )}
+  {images.length > 1 && (
+    <>
+      <button
+        className={`${styles.galleryArrow} ${styles.galleryArrowLeft}`}
+        onClick={() => setMainImage((prev) => (prev - 1 + images.length) % images.length)}
+        aria-label="Imagen anterior"
+      >
+        ‹
+      </button>
+      <button
+        className={`${styles.galleryArrow} ${styles.galleryArrowRight}`}
+        onClick={() => setMainImage((prev) => (prev + 1) % images.length)}
+        aria-label="Imagen siguiente"
+      >
+        ›
+      </button>
+      <div className={styles.galleryDots}>
+        {images.map((_, i) => (
+          <span
+            key={i}
+            className={`${styles.galleryDot} ${i === mainImage ? styles.galleryDotActive : ''}`}
+          />
+        ))}
+      </div>
+    </>
+  )}
+</div>
         </div>
 
         {/* Info */}

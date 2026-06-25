@@ -218,3 +218,52 @@
     padding: 2rem 1rem 4rem;
   }
 }
+
+.galleryArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background var(--transition);
+  color: var(--color-accent);
+}
+
+.galleryArrow:hover {
+  background: #ffffff;
+}
+
+.galleryArrowLeft { left: 0.75rem; }
+.galleryArrowRight { right: 0.75rem; }
+
+.galleryDots {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.galleryDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  transition: background var(--transition);
+}
+
+.galleryDotActive {
+  background: #ffffff;
+}

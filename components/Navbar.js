@@ -69,8 +69,8 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <Image src="/logo.png" alt="Luna Agujas y Sueños" width={60} height={60} priority />
-            <span className={styles.logoName}>Luna</span>
+            <Image src="/logo_luna.png" alt="Luna Agujas y Sueños" width={60} height={60} priority />
+            <span className={styles.logoName}>Luna Agujas y Sueños</span>
           </Link>
 
           {/* Menú desktop */}

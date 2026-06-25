@@ -147,7 +147,15 @@
     object-position: center center;
   }
 
-  .arrow { display: none; }
+  .arrow {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+
+  .arrowLeft { left: 0.5rem; }
+  .arrowRight { right: 0.5rem; }
 
   .cta {
     padding: 0.85rem 2rem;
